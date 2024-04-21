@@ -9,7 +9,10 @@ app.use(express.json());
 
 // importing the file upload
 const fileUpload = require('express-fileupload');
-app.use(fileUpload());
+app.use(fileUpload({
+    useTempFiles : true,
+    tempFileDir : '/tmp/'
+}));
 
 
 // connecting to the DB
